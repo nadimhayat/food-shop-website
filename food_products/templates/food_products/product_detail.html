@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="indv_product_detail">
+    <div class="individual_product">
+
+        <h2>{{ indv_product.name }}</a></h2>
+        <img src="{{indv_product.thumb.url }}" >
+        <p>Price:  {{ indv_product.price }}yen </p>
+        <p>Weight: {{ indv_product.weight }}g </p>
+        <p>Description: {{ indv_product.description}} </p>
+
+    </div>
+</div>
+    
+{% endblock %}

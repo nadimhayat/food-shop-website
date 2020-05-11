@@ -1,0 +1,28 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block content %}
+
+    <h1>WATS FOOD MART(Halal food store)</h1>
+    <img src="{% static '2.jpg' %}" alt="wats">
+    <h4>
+        Welcome to WATS food mart. We sell quality halal food, and a variety of snacks, spices, meat etc from different countries
+    </h4>
+    <br>
+    <h2>Categories</h2>
+   
+    <div class="category_list">
+  
+        <h3><a href="{% url 'food_products:list' %}">Meat</a></h3>
+        <h3><a href="{% url 'food_products:list' %}">Fish</a></h3>
+        <h3><a href="{% url 'food_products:list' %}">Vegetables</a></h3>
+        <h3><a href="{% url 'food_products:list' %}">Spices</a></h3>
+        <h3><a href="{% url 'food_products:list' %}">Snacks</a></h3>
+        <h3><a href="{% url 'food_products:list' %}">Beans</a></h3>
+        <h3><a href="{% url 'food_products:list' %}">Rice & Flour</a></h3>
+        <h3><a href="{% url 'food_products:list' %}">Oil & Ghee</a></h3>
+        {% comment %} {% ifequal category category.category %} 
+            hidden
+        {% endifequal %} {% endcomment %}
+    
+
+{% endblock %}
