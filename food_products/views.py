@@ -2,8 +2,11 @@ from django.shortcuts import render
 from .models import ProductDetail
 
 
-def product_list(request, ):
-    productinfo = ProductDetail.objects.all().order_by('-created_at')
+def product_list(request):
+    # gets the value from the url parameter (from the GET request)
+    selected_category = request.GET.get('category')
+    # filters by selected category
+    productinfo = ProductDetail.objects.all().order_by('-created_at').filter(category=selected_category)
     return render(request, 'food_products/product_list.html', {'productinfo': productinfo}) 
 
 def product_detail(request, slug):

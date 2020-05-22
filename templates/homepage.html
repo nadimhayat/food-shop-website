@@ -11,9 +11,18 @@
     <h2>Categories</h2>
    
     <div class="category_list">
-  
-        <h3><a href="{% url 'food_products:list' %}">Meat</a></h3>
-        <h3><a href="{% url 'food_products:list' %}">Fish</a></h3>
+
+        {% comment %} html form to call GET request to pass Meat into url parameter {% endcomment %}
+        <form action="{% url 'food_products:list' %}" method="get">
+            <input type="submit" name="category" value="Meat" />
+        </form>
+
+        <form action="{% url 'food_products:list' %}" method="get">
+            <input type="submit" name="category" value="Fish" />
+        </form>
+
+        {% comment %} TIP: I would pass a list of the categories and call a for loop instead of writing the form thing 10 times, but not required for it to work. Just cleaner code :) {% endcomment %}
+
         <h3><a href="{% url 'food_products:list' %}">Vegetables</a></h3>
         <h3><a href="{% url 'food_products:list' %}">Spices</a></h3>
         <h3><a href="{% url 'food_products:list' %}">Snacks</a></h3>
